@@ -1,118 +1,231 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For You ❤️</title>
+<title>Happy Birthday My Love ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            text-align: center;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #ff6a88, #ff99ac);
-            color: white;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-size: 45px;
-            margin-top: 120px;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        p {
-            font-size: 22px;
-            margin-top: 10px;
-            animation: fadeIn 3s ease-in-out;
-        }
-
-        button {
-            padding: 15px 35px;
-            font-size: 18px;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            margin: 20px;
-            transition: 0.3s;
-        }
-
-        #yesBtn {
-            background-color: #28a745;
-            color: white;
-        }
-
-        #yesBtn:hover {
-            transform: scale(1.1);
-        }
-
-        #noBtn {
-            background-color: #dc3545;
-            color: white;
-            position: absolute;
-        }
-
-        /* Floating hearts */
-        .heart {
-            position: absolute;
-            color: #ffdde1;
-            font-size: 20px;
-            animation: float 6s linear infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh); opacity: 1; }
-            100% { transform: translateY(-10vh); opacity: 0; }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+}
+#giftPage{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.gift{
+    font-size:120px;
+    animation:bounce 1s infinite alternate;
+}
+@keyframes bounce{
+    from{transform:translateY(0);}
+    to{transform:translateY(-25px);}
+}
+button{
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:30px;
+    background:white;
+    color:#ff006e;
+    cursor:pointer;
+    font-weight:bold;
+}
+input{
+    padding:13px;
+    font-size:18px;
+    border-radius:12px;
+    border:none;
+    width:260px;
+    text-align:center;
+}
+#mainContent{
+    display:none;
+}
+section{
+    padding:60px 20px;
+}
+.card{
+    background:white;
+    color:#333;
+    max-width:800px;
+    margin:auto;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+h1{
+    font-size:42px;
+}
+img{
+    width:250px;
+    height:300px;
+    object-fit:cover;
+    border-radius:25px;
+    margin:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+.kavithai{
+    font-size:23px;
+    line-height:40px;
+    color:#ff006e;
+    font-weight:bold;
+}
+.reason{
+    background:#ffe6f0;
+    margin:12px;
+    padding:15px;
+    border-radius:15px;
+    font-size:20px;
+}
+.final{
+    font-size:35px;
+    animation:zoom 1s infinite alternate;
+}
+@keyframes zoom{
+    from{transform:scale(1);}
+    to{transform:scale(1.08);}
+}
+#msg{
+    color:yellow;
+    font-size:18px;
+    margin-top:20px;
+}
+</style>
 </head>
 
 <body>
 
-    <h1>You 💖</h1>
-    <p>You are the most beautiful part of my life 😍</p>
-    <p>Will you be mine forever? ❤️</p>
+<div id="giftPage">
+    <div class="gift">🎁</div>
 
-    <button id="yesBtn" onclick="yesClick()">Yes 💍</button>
-    <button id="noBtn" onmouseover="moveNo()">No 😢</button>
+    <h1>Someone Special Has a Surprise ❤️</h1>
 
-    <script>
-        function yesClick() {
-            document.body.innerHTML = `
-                <h1>💍 I Love You Varsha ❤️</h1>
-                <h2>You made my life magical ✨</h2>
-                <p>Forever with you 💖</p>
-            `;
-        }
+    <h2>💖 Who is your favorite person?</h2>
 
-        function moveNo() {
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 100);
+    <input type="text" id="favPerson" placeholder="Enter name">
 
-            let btn = document.getElementById("noBtn");
-            btn.style.left = x + "px";
-            btn.style.top = y + "px";
-        }
+    <br><br>
 
-        // Create floating hearts
-        setInterval(() => {
-            let heart = document.createElement("div");
-            heart.className = "heart";
-            heart.innerHTML = "❤️";
+    <button onclick="checkName()">Open My Birthday Surprise ❤️</button>
 
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    <p id="msg"></p>
+</div>
 
-            document.body.appendChild(heart);
+<div id="mainContent">
 
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }, 300);
-    </script>
+<section>
+    <h1>🎂 Happy Birthday My Princess ❤️</h1>
+    <img src="girl.jpg">
+
+    <p style="font-size:24px;">
+        Today is not just your birthday.  
+        It is the day my favorite person came into this world ❤️
+    </p>
+</section>
+
+<section>
+    <div class="card">
+        <h1>💌 My Love Letter</h1>
+
+        <p style="font-size:22px; line-height:35px;">
+            Happy Birthday my love ❤️<br><br>
+
+            You are the most beautiful part of my life.
+            Your smile gives me happiness, your love gives me strength,
+            and your presence makes my world complete.
+            I wish you endless happiness, success, good health,
+            and all the love you deserve.
+            <br><br>
+
+            I promise to love you, support you, and stand with you always.
+            <br><br>
+
+            I love you forever ❤️
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h1>🌹 Tamil Kavithai 🌹</h1>
+
+        <p class="kavithai">
+            என் வாழ்க்கையின் அழகான அத்தியாயம் நீ...<br>
+            என் இதயத்தின் இனிய இசை நீ...<br>
+            உன் சிரிப்பு என் உலகத்தின் சூரியன்...<br>
+            உன் அன்பு என் வாழ்வின் அர்த்தம்...<br><br>
+
+            இன்று உன் பிறந்த நாள்...<br>
+            உன் எல்லா கனவுகளும் நனவாகட்டும்...<br>
+            உன் சிரிப்பு என்றும் மலரட்டும்...<br><br>
+
+            இனிய பிறந்தநாள் வாழ்த்துக்கள் என் உயிரே ❤️
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h1>💖 10 Reasons Why I Love You</h1>
+
+        <div class="reason">❤️ Your beautiful smile</div>
+        <div class="reason">❤️ Your caring heart</div>
+        <div class="reason">❤️ Your kindness</div>
+        <div class="reason">❤️ You always support me</div>
+        <div class="reason">❤️ You make me happy</div>
+        <div class="reason">❤️ Your voice gives me peace</div>
+        <div class="reason">❤️ You understand me</div>
+        <div class="reason">❤️ You make every day special</div>
+        <div class="reason">❤️ You are my strength</div>
+        <div class="reason">❤️ I love everything about you</div>
+    </div>
+</section>
+
+<section>
+    <h1>📸 Our Beautiful Memories</h1>
+
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+</section>
+
+<section>
+    <div class="card">
+        <h1>🎂 Final Surprise 🎂</h1>
+
+        <p class="final">
+            I LOVE YOU ❤️<br>
+            Today... Tomorrow... Always... Forever...
+        </p>
+    </div>
+</section>
+
+</div>
+
+<script>
+function checkName(){
+
+    var name = document.getElementById("favPerson").value.trim().toLowerCase();
+
+    if(name === "ajith"){
+
+        document.getElementById("giftPage").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+
+    }else{
+
+        document.getElementById("msg").innerHTML =
+        "❌ Wrong answer! Only favPerson can unlock this surprise ❤️";
+    }
+}
+</script>
 
 </body>
 </html>
